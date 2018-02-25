@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.alex.gitreferencelab.MainActivity">
+
+    <ListView
+        android:id="@+id/git_command_list"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:dividerHeight="5.0sp"
+        android:divider="@android:color/black"
+        android:padding="45sp" >
+    </ListView>
+
+
+</android.support.constraint.ConstraintLayout>
