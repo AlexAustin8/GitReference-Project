@@ -9,18 +9,15 @@
         android:id="@+id/command"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dip"
-        android:paddingBottom="10dip"
-        android:paddingRight="20dip"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="24sp"
+        android:typeface="normal"
         android:visibility="visible" />
 
     <TextView
         android:id="@+id/example"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dip"
-        android:paddingRight="20dip"
-        android:paddingTop="20dip"
         android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@+id/command" />
 
@@ -28,9 +25,6 @@
         android:id="@+id/explanation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dip"
-        android:paddingRight="20dip"
-        android:paddingTop="30dip"
         android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@+id/example" />
 

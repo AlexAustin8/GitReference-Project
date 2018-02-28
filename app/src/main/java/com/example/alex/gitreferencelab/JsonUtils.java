@@ -73,6 +73,49 @@ public class JsonUtils {
         return data;
     }
 
+    /**
+     *
+     * @param jsonString
+     * @param filter
+     * @return ArrayList<GitReference>
+     *
+     * Functions similarly to the populateGitReferences() method
+     * except it also includes a filter field, and only populates the
+     * ArrayList with objects that comply to the given filter
+     */
+    public static ArrayList<GitReference> populateFilteredGitReferences(String jsonString, String filter) {
+        ArrayList<GitReference> data=new ArrayList<>();
+
+        JSONArray jArray = null;
+        try {
+            // Load json String into a JSONObject
+            JSONObject jsonObject = new JSONObject(jsonString);
+
+            // Extract all the "command" JSON objects into a JsonArray
+            jArray = jsonObject.getJSONArray("commands");
+
+            // Extract json objects from JsonArray and store into ArrayList as class objects
+            for(int i=0;i<jArray.length();i++){
+                JSONObject json_data = jArray.getJSONObject(i);
+                if(json_data.getString("section").compareTo(filter) == 0) {
+                    GitReference gitReference = new GitReference();
+                    gitReference.setCommand(json_data.getString("command"));
+                    gitReference.setExample(json_data.getString("example"));
+                    gitReference.setExplanation(json_data.getString("explanation"));
+                    gitReference.setSection(json_data.getString("section"));
+
+                    Log.i("JSON", "Adding: " + gitReference.getCommand());
+                    data.add(gitReference);
+                }
+            }
+
+        } catch (Exception ex) {
+
+        }
+
+        return data;
+    }
+
     public static String read(Context context, String fileName) {
         try {
             FileInputStream fis = context.openFileInput(fileName);

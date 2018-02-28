@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:dividerHeight="5.0sp"
         android:divider="@android:color/black"
-        android:padding="45sp" >
+        android:padding="@dimen/thick_padding" >
     </ListView>
 
 

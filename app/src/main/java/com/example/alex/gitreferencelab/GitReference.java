@@ -26,6 +26,10 @@ public class GitReference {
         return section;
     }
 
+    public String toString(){
+        return section;
+    }
+
     public void setCommand(String s){
         command = s;
     }

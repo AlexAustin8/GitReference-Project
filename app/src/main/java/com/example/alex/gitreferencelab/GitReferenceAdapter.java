@@ -37,19 +37,18 @@ public class GitReferenceAdapter extends BaseAdapter {
         return i;
     }
 
+
     public View getView(int position, View view, ViewGroup viewGroup){
        View rowView = mInflater.inflate(R.layout.git_reference_layout, viewGroup,false);
 
         TextView commandView = rowView.findViewById(R.id.command);
         TextView exampleView = rowView.findViewById(R.id.example);
         TextView explanationView = rowView.findViewById(R.id.explanation);
-      //  TextView sectionView = rowView.findViewById(android.R.id.text4);
 
         GitReference gr = (GitReference) getItem(position);
         commandView.setText("Command: " + gr.getCommand());
         exampleView.setText("Example: " + gr.getExample());
         explanationView.setText("Explanation: " + gr.getExplanation());
-      //  sectionView.setText(gr.getSection());
 
 
         return rowView;
